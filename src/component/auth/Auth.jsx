@@ -25,7 +25,7 @@ const Auth = () => {
             const data = new FormData()
             data.append("email",login.email)
             data.append("pass",login.pass)
-            axios.post("http://localhost/MY_PROJECTS/electronic_project/auth.php",data).then((res)=>{
+            axios.post("http://localhost/MY_PROJECTS/electronic_project2/auth.php",data).then((res)=>{
                 if (!res.data === false) {
                     navigate("/")
                     toast.success("welcome to then dashboard")
@@ -42,12 +42,12 @@ const Auth = () => {
     <>
     <section className='absolute left-1/2 top-1/2 h-96 w-[400px] -translate-x-1/2 -translate-y-1/2 sh rounded-md flex flex-col items-center justify-between'>
         <div className='flex items-center'>
-            <img src={logo} alt="pic" className='w-[200px] mix-blend-multiply object-cover'/>
+            <img src={logo} alt="pic" className='w-[170px] mix-blend-multiply object-cover'/>
         </div>
         <form onSubmit={Confirm} className="h-[85%] w-full  flex flex-col items-center justify-center gap-7">
             <TextField name='email' className='w-[90%]' label="Email" type="email" variant="standard" onChange={Change}/>
             <TextField name='pass' className='w-[90%]' label="Password" type="password" variant="standard" onChange={Change}/>
-            <button type='submit' className='w-[100px] h-10 text-sm rounded-md sh bg-white text-blue-900 duration-500 transition-all hover:text-white hover:bg-blue-900'>Log In</button>
+            <button type='submit' className='w-[100px] h-10 text-sm rounded-md sh bg-white text-yellow-900 duration-500 transition-all hover:text-white hover:bg-yellow-900'>Log In</button>
         </form>
     </section>
     </>

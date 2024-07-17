@@ -10,7 +10,7 @@ const Add = () => {
     const {Handlechange,Formconfirmation} = useContext(Data)
     let [AddWatch,setAddWatch] = useState({
         Nom : "",
-        type : "monitor",
+        type : "phone",
         description : "",
         prix : "",
         pic : "",
@@ -31,7 +31,7 @@ const Add = () => {
             Data.append("price",AddWatch.prix)
             Data.append("picture",AddWatch.pic)
             Data.append("qte",AddWatch.qte)
-            axios.post("http://localhost/MY_PROJECTS/electronic_project/product.php",Data).then((res)=>{
+            axios.post("http://localhost/MY_PROJECTS/electronic_project2/product.php",Data).then((res)=>{
                 if (res.data) {
                     toast.success("Your Annouce is succesfuly added !!");
                     // setcount(count === 0 ? 1 : 0);
@@ -45,7 +45,7 @@ const Add = () => {
 
     <>
         <form className='w-[90%] flex gap-5 flex-col items-center relative left-1/2 -translate-x-1/2 mt-10 pb-4' onSubmit={Addproduct}>
-            <h1 className='text-blue-900 font-bold text-[20px] md:text-[30px] text-center'>Add New Product</h1>
+            <h1 className='text-yellow-800 font-bold text-[20px] md:text-[30px] text-center'>Add New Product</h1>
             <nav className='grid grid-cols-1 gap-3 w-[90%] place-items-center'>
                 <div className='flex flex-col gap-2 w-[80%]'>
                     <label htmlFor="">Name</label>
@@ -54,10 +54,10 @@ const Add = () => {
                 <div className='flex flex-col gap-2 w-[80%]'>
                     <label htmlFor="">Type</label>
                     <select name="type"  className='h-10 rounded-md focus:outline-none pl-2 bg-transparent sh ' onChange={InputChange}>
-                        <option value="monitor">Monitor</option>
-                        <option value="gpu">GPU</option>
-                        <option value="ram">Ram</option>
-                        <option value="setup">Setup</option>
+                        <option value="phone">Phone</option>
+                        <option value="airpod">Air Pod</option>
+                        <option value="mac">Mac</option>
+                        <option value="smart">Smart Watch</option>
                     </select>
                 </div>
             </nav>
@@ -78,7 +78,7 @@ const Add = () => {
                 </div>
             </nav>
             <div className='w-[80%] pl-10'>
-            <button type='submit' className='w-[120px] h-9 rounded-md sh bg-white text-blue-900 duration-500 transition-all hover:text-white hover:bg-blue-900 self-start'>Add</button>
+            <button type='submit' className='w-[120px] h-9 rounded-md sh bg-white text-yellow-800 duration-500 transition-all hover:text-white hover:bg-yellow-800 self-start'>Add</button>
             </div>
         </form>
     </>
